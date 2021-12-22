@@ -1,2 +1,2 @@
-# ecel-latex
-Course materials for the ECEL Research Group Course (April 2021)
+# ECEL Research Group- Introductory LaTeX course
+Course materials for the ECEL Research Group LaTeX Course (April 2021)
