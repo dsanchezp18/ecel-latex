@@ -1,0 +1,14 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[backend=biber,style=apa, citestyle=apa]{biblatex} % para manejo de bibliografía
+
+\addbibresource{sample.bib} % aquí el archivo con las referencias
+
+
+\begin{document}
+\section{Tema Principal}
+De acuerdo con \textcite{Frain.July2014}
+
+\printbibliography[title=Trabajos Citados]
+\end{document}

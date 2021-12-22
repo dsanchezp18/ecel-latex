@@ -1,0 +1,19 @@
+\documentclass[man]{apa}
+% Este es una clase de documento especial, que hace todo como debería ser un trabajo con formato APA, con algunos cambios, pero probablemente suficiente para un trabajo que no se debe subir a un journal académico.
+
+% Es necesario cambiar la letra a TIMES NEW ROMAN. Sin cambiar el builder de latex, esto se hace con el siguiente comando, para llegar a un tipo de letra similar al TIMES
+
+% \usepackage{newtxtext,newtxmath} % Para times new roman en texto y ecuaciones
+
+%\usepackage{fontspec} % Utilizar solamente con XeLaTeX
+    %\setmainfont{Times New Roman} %
+
+\usepackage{lipsum} % Texto de Prueba
+\begin{document}
+% aquí debería insertarse una portada, como en nuestro anterior documento
+    \section{INTRODUCCIÓN} % en teoría, los títulos de primer nivel deben ser centrados, negrillas y mayúsculas. Es necesario poner en mayúsculas uno mismo.
+    \subsection{Subsección A} % Según APA7, la subsección debe ser editada de otra forma que la que sale aquí. Si es que eso es un problema para una clase, cambiarlo mediante renew command de subsección (ver tutoriales de overleaf, no es díficil)
+    \lipsum
+% Las citas y referencias requieren algo más de conocimientos para poder hacerse en latex. Esto lo veremos el día 4. Recomiendo que quien necesite hacer esto de forma urgente, revise el videos y tutoriales (el propio de Overleaf es excelente) de como usar el paquete BIBLATEX con APA. El script guía del día 4 quizás sirva también, pero seguramente da errores si intentan compilarlo porque necesita generar el archivo .bib y aun no hemos visto eso
+
+\end{document}

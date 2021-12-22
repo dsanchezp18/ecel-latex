@@ -1,0 +1,235 @@
+{smcl}
+{txt}{sf}{ul off}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\Daniel Sanchez\OneDrive\Documentos\personal\cursos\curso latex ecel (mío)\clases\día 4\stata\ltxstat.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}23 Apr 2021, 21:41:43
+{txt}
+{com}. 
+. clear 
+{txt}
+{com}. *borra todo lo que estaba cargado anteriormente
+. 
+. use corruption.dta
+{txt}
+{com}. *cargar la base
+. 
+. * El comando version 15 asegura compatibilidad con otras versiones de Stata
+. 
+. *Para exportar requiero instalar el paquete, si es que no estaba installado debo hacer ssc install outreg2
+. 
+. summarize
+
+{txt}    Variable {c |}        Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 57}
+{space 10}id {c |}{res}          0
+{txt}{space 8}code {c |}{res}          0
+{txt}{space 5}country {c |}{res}          0
+{txt}{space 6}region {c |}{res}          0
+{txt}{space 3}inc_group {c |}{res}          0
+{txt}{hline 13}{c +}{hline 57}
+{space 9}efw {c |}{res}        162    6.860247    .9544599       3.34       8.94
+{txt}{space 9}cpi {c |}{res}        160     44.3375    19.17575         13         88
+{txt}{space 6}gdp_pc {c |}{res}        158    21855.75    21527.39   761.5242     114110
+{txt}{space 9}reg {c |}{res}        162    7.110171    1.055856   2.517874   9.469451
+{txt}{space 9}pol {c |}{res}        150    4.773333    5.818446        -10         10
+{txt}{hline 13}{c +}{hline 57}
+{space 6}govexp {c |}{res}        161    30.89522    12.10437     11.139     86.242
+{txt}{space 9}inf {c |}{res}        161    5.275838    7.593192  -2.887559   58.64022
+{txt}{space 9}pop {c |}{res}        161    4.60e+07    1.57e+08      96762   1.39e+09
+{txt}{space 9}nat {c |}{res}        157    7.289389    10.58401   .0001876   54.91636
+{txt}{space 9}oil {c |}{res}         96    5.673407    11.02174   .0001388   49.96261
+{txt}{hline 13}{c +}{hline 57}
+{space 9}min {c |}{res}        112    2.610412    4.908669  -.0001879   28.87831
+{txt}{space 6}legint {c |}{res}        161    5.893988    1.423183   2.489033    8.81732
+{txt}{space 9}cci {c |}{res}        162   -.0345624    1.004273  -1.638176   2.212744
+{txt}{space 6}agedem {c |}{res}        161    27.57764    38.78863          0        216
+{txt}{space 8}lgdp {c |}{res}        158    9.432618    1.174718   6.635322   11.64492
+{txt}{hline 13}{c +}{hline 57}
+{space 8}lpop {c |}{res}        161    16.18503    1.675233   11.48001   21.05453
+{txt}{space 7}infsq {c |}{res}        161    85.13291    325.6964          0   3438.676
+{txt}
+{com}. * Para hacer estadística descriptiva de todas las variables en la base que quedó cargada
+. * Para exportar basta pegarlo a Excel como una tabla
+. 
+. reg cpi efw reg pol agedem 
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       149
+{txt}{hline 13}{c +}{hline 34}   F(4, 144)       = {res}    72.11
+{txt}       Model {c |} {res} 35560.7446         4  8890.18616   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 17753.4299       144  123.287707   {txt}R-squared       ={res}    0.6670
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6578
+{txt}       Total {c |} {res} 53314.1745       148  360.230909   {txt}Root MSE        =   {res} 11.103
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         cpi{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}efw {c |}{col 14}{res}{space 2} 5.495826{col 26}{space 2} 1.916755{col 37}{space 1}    2.87{col 46}{space 3}0.005{col 54}{space 4} 1.707216{col 67}{space 3} 9.284435
+{txt}{space 9}reg {c |}{col 14}{res}{space 2} 4.950697{col 26}{space 2} 1.628196{col 37}{space 1}    3.04{col 46}{space 3}0.003{col 54}{space 4} 1.732446{col 67}{space 3} 8.168948
+{txt}{space 9}pol {c |}{col 14}{res}{space 2} -.212436{col 26}{space 2} .1928228{col 37}{space 1}   -1.10{col 46}{space 3}0.272{col 54}{space 4}-.5935647{col 67}{space 3} .1686927
+{txt}{space 6}agedem {c |}{col 14}{res}{space 2} .2182186{col 26}{space 2} .0297056{col 37}{space 1}    7.35{col 46}{space 3}0.000{col 54}{space 4} .1595033{col 67}{space 3}  .276934
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} -34.0407{col 26}{space 2} 7.912338{col 37}{space 1}   -4.30{col 46}{space 3}0.000{col 54}{space 4}-49.68003{col 67}{space 3}-18.40137
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. * Regresión no. 1 
+. outreg2 using results, replace tex dec(2)
+{txt}{stata `"shellout using `"results.tex"'"':results.tex}
+{browse `"C:\Users\Daniel Sanchez\OneDrive\Documentos\personal\cursos\curso latex ecel (mío)\clases\día 4\stata"' :dir}{com} : {txt}{stata `"seeout using "results.txt""':seeout}
+
+{com}. * outreg2 es el comando, utiliza un archivo de tex que se llama results y pone 2 decimales. Hace replace para vaciar todo lo que estaba en ese tex, si es que había algo
+. 
+. reg cpi efw reg pol agedem inf oil 
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        91
+{txt}{hline 13}{c +}{hline 34}   F(6, 84)        = {res}    32.18
+{txt}       Model {c |} {res} 21467.5735         6  3577.92892   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 9340.58031        84  111.197385   {txt}R-squared       ={res}    0.6968
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6752
+{txt}       Total {c |} {res} 30808.1538        90  342.312821   {txt}Root MSE        =   {res} 10.545
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         cpi{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}efw {c |}{col 14}{res}{space 2} 10.12004{col 26}{space 2}  2.63941{col 37}{space 1}    3.83{col 46}{space 3}0.000{col 54}{space 4} 4.871284{col 67}{space 3}  15.3688
+{txt}{space 9}reg {c |}{col 14}{res}{space 2} 2.719591{col 26}{space 2} 2.127576{col 37}{space 1}    1.28{col 46}{space 3}0.205{col 54}{space 4}-1.511327{col 67}{space 3} 6.950509
+{txt}{space 9}pol {c |}{col 14}{res}{space 2} -.440436{col 26}{space 2} .2358824{col 37}{space 1}   -1.87{col 46}{space 3}0.065{col 54}{space 4} -.909514{col 67}{space 3}  .028642
+{txt}{space 6}agedem {c |}{col 14}{res}{space 2} .1952399{col 26}{space 2}  .035882{col 37}{space 1}    5.44{col 46}{space 3}0.000{col 54}{space 4} .1238845{col 67}{space 3} .2665952
+{txt}{space 9}inf {c |}{col 14}{res}{space 2} .1081234{col 26}{space 2} .2040666{col 37}{space 1}    0.53{col 46}{space 3}0.598{col 54}{space 4}-.2976853{col 67}{space 3} .5139322
+{txt}{space 9}oil {c |}{col 14}{res}{space 2} .0174345{col 26}{space 2} .1232255{col 37}{space 1}    0.14{col 46}{space 3}0.888{col 54}{space 4}-.2276129{col 67}{space 3} .2624819
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-49.00938{col 26}{space 2}  13.3354{col 37}{space 1}   -3.68{col 46}{space 3}0.000{col 54}{space 4}-75.52829{col 67}{space 3}-22.49048
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. * Regresión no. 2
+. outreg2 using results, append tex dec(2)
+{txt}{stata `"shellout using `"results.tex"'"':results.tex}
+{browse `"C:\Users\Daniel Sanchez\OneDrive\Documentos\personal\cursos\curso latex ecel (mío)\clases\día 4\stata"' :dir}{com} : {txt}{stata `"seeout using "results.txt""':seeout}
+
+{com}. * Lo mismo pero ahora va a unir la de ahora, con la que estaba anteriormente. 
+. 
+. gen int_oilefw= efw*oil
+{txt}(66 missing values generated)
+
+{com}. * Generando término de interacción
+. reg cpi efw reg pol agedem inf oil int_oilefw
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        91
+{txt}{hline 13}{c +}{hline 34}   F(7, 83)        = {res}    27.26
+{txt}       Model {c |} {res} 21468.5465         7  3066.93521   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 9339.60739        83   112.52539   {txt}R-squared       ={res}    0.6968
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6713
+{txt}       Total {c |} {res} 30808.1538        90  342.312821   {txt}Root MSE        =   {res} 10.608
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         cpi{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}efw {c |}{col 14}{res}{space 2} 10.19549{col 26}{space 2} 2.776333{col 37}{space 1}    3.67{col 46}{space 3}0.000{col 54}{space 4} 4.673472{col 67}{space 3}  15.7175
+{txt}{space 9}reg {c |}{col 14}{res}{space 2} 2.720653{col 26}{space 2} 2.140273{col 37}{space 1}    1.27{col 46}{space 3}0.207{col 54}{space 4}-1.536265{col 67}{space 3}  6.97757
+{txt}{space 9}pol {c |}{col 14}{res}{space 2}-.4484272{col 26}{space 2} .2523705{col 37}{space 1}   -1.78{col 46}{space 3}0.079{col 54}{space 4} -.950382{col 67}{space 3} .0535276
+{txt}{space 6}agedem {c |}{col 14}{res}{space 2} .1949229{col 26}{space 2} .0362562{col 37}{space 1}    5.38{col 46}{space 3}0.000{col 54}{space 4} .1228107{col 67}{space 3} .2670351
+{txt}{space 9}inf {c |}{col 14}{res}{space 2} .1075717{col 26}{space 2} .2053673{col 37}{space 1}    0.52{col 46}{space 3}0.602{col 54}{space 4}-.3008955{col 67}{space 3} .5160389
+{txt}{space 9}oil {c |}{col 14}{res}{space 2} .0888221{col 26}{space 2} .7776746{col 37}{space 1}    0.11{col 46}{space 3}0.909{col 54}{space 4}-1.457941{col 67}{space 3} 1.635586
+{txt}{space 2}int_oilefw {c |}{col 14}{res}{space 2}-.0123818{col 26}{space 2} .1331588{col 37}{space 1}   -0.09{col 46}{space 3}0.926{col 54}{space 4}-.2772292{col 67}{space 3} .2524656
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-49.46597{col 26}{space 2} 14.28524{col 37}{space 1}   -3.46{col 46}{space 3}0.001{col 54}{space 4}-77.87874{col 67}{space 3} -21.0532
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. * Regresión no. 3
+. outreg2 using results, append tex dec(2)
+{txt}{stata `"shellout using `"results.tex"'"':results.tex}
+{browse `"C:\Users\Daniel Sanchez\OneDrive\Documentos\personal\cursos\curso latex ecel (mío)\clases\día 4\stata"' :dir}{com} : {txt}{stata `"seeout using "results.txt""':seeout}
+
+{com}. * Igual que antes
+. 
+. * Exportar a Excel sería exactamente lo mismo pero reemplazar Excel por TEX
+. 
+. reg cpi efw reg pol agedem 
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}       149
+{txt}{hline 13}{c +}{hline 34}   F(4, 144)       = {res}    72.11
+{txt}       Model {c |} {res} 35560.7446         4  8890.18616   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 17753.4299       144  123.287707   {txt}R-squared       ={res}    0.6670
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6578
+{txt}       Total {c |} {res} 53314.1745       148  360.230909   {txt}Root MSE        =   {res} 11.103
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         cpi{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}efw {c |}{col 14}{res}{space 2} 5.495826{col 26}{space 2} 1.916755{col 37}{space 1}    2.87{col 46}{space 3}0.005{col 54}{space 4} 1.707216{col 67}{space 3} 9.284435
+{txt}{space 9}reg {c |}{col 14}{res}{space 2} 4.950697{col 26}{space 2} 1.628196{col 37}{space 1}    3.04{col 46}{space 3}0.003{col 54}{space 4} 1.732446{col 67}{space 3} 8.168948
+{txt}{space 9}pol {c |}{col 14}{res}{space 2} -.212436{col 26}{space 2} .1928228{col 37}{space 1}   -1.10{col 46}{space 3}0.272{col 54}{space 4}-.5935647{col 67}{space 3} .1686927
+{txt}{space 6}agedem {c |}{col 14}{res}{space 2} .2182186{col 26}{space 2} .0297056{col 37}{space 1}    7.35{col 46}{space 3}0.000{col 54}{space 4} .1595033{col 67}{space 3}  .276934
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} -34.0407{col 26}{space 2} 7.912338{col 37}{space 1}   -4.30{col 46}{space 3}0.000{col 54}{space 4}-49.68003{col 67}{space 3}-18.40137
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. * Regresión no. 1 
+. outreg2 using results, replace excel dec(2)
+{txt}{browse `"results.xml"'}
+{browse `"C:\Users\Daniel Sanchez\OneDrive\Documentos\personal\cursos\curso latex ecel (mío)\clases\día 4\stata"' :dir}{com} : {txt}{stata `"seeout using "results.txt""':seeout}
+
+{com}. * outreg2 es el comando, utiliza un archivo de  excel que se llama results y pone 2 decimales. Hace replace para vaciar todo lo que estaba en ese excel, si es que había algo
+. 
+. reg cpi efw reg pol agedem inf oil 
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        91
+{txt}{hline 13}{c +}{hline 34}   F(6, 84)        = {res}    32.18
+{txt}       Model {c |} {res} 21467.5735         6  3577.92892   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 9340.58031        84  111.197385   {txt}R-squared       ={res}    0.6968
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6752
+{txt}       Total {c |} {res} 30808.1538        90  342.312821   {txt}Root MSE        =   {res} 10.545
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         cpi{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}efw {c |}{col 14}{res}{space 2} 10.12004{col 26}{space 2}  2.63941{col 37}{space 1}    3.83{col 46}{space 3}0.000{col 54}{space 4} 4.871284{col 67}{space 3}  15.3688
+{txt}{space 9}reg {c |}{col 14}{res}{space 2} 2.719591{col 26}{space 2} 2.127576{col 37}{space 1}    1.28{col 46}{space 3}0.205{col 54}{space 4}-1.511327{col 67}{space 3} 6.950509
+{txt}{space 9}pol {c |}{col 14}{res}{space 2} -.440436{col 26}{space 2} .2358824{col 37}{space 1}   -1.87{col 46}{space 3}0.065{col 54}{space 4} -.909514{col 67}{space 3}  .028642
+{txt}{space 6}agedem {c |}{col 14}{res}{space 2} .1952399{col 26}{space 2}  .035882{col 37}{space 1}    5.44{col 46}{space 3}0.000{col 54}{space 4} .1238845{col 67}{space 3} .2665952
+{txt}{space 9}inf {c |}{col 14}{res}{space 2} .1081234{col 26}{space 2} .2040666{col 37}{space 1}    0.53{col 46}{space 3}0.598{col 54}{space 4}-.2976853{col 67}{space 3} .5139322
+{txt}{space 9}oil {c |}{col 14}{res}{space 2} .0174345{col 26}{space 2} .1232255{col 37}{space 1}    0.14{col 46}{space 3}0.888{col 54}{space 4}-.2276129{col 67}{space 3} .2624819
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-49.00938{col 26}{space 2}  13.3354{col 37}{space 1}   -3.68{col 46}{space 3}0.000{col 54}{space 4}-75.52829{col 67}{space 3}-22.49048
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. * Regresión no. 2
+. outreg2 using results, append excel dec(2)
+{txt}{browse `"results.xml"'}
+{browse `"C:\Users\Daniel Sanchez\OneDrive\Documentos\personal\cursos\curso latex ecel (mío)\clases\día 4\stata"' :dir}{com} : {txt}{stata `"seeout using "results.txt""':seeout}
+
+{com}. * Lo mismo pero ahora va a unir la de ahora, con la que estaba anteriormente. 
+. 
+. reg cpi efw reg pol agedem inf oil int_oilefw
+
+{txt}      Source {c |}       SS           df       MS      Number of obs   ={res}        91
+{txt}{hline 13}{c +}{hline 34}   F(7, 83)        = {res}    27.26
+{txt}       Model {c |} {res} 21468.5465         7  3066.93521   {txt}Prob > F        ={res}    0.0000
+{txt}    Residual {c |} {res} 9339.60739        83   112.52539   {txt}R-squared       ={res}    0.6968
+{txt}{hline 13}{c +}{hline 34}   Adj R-squared   ={res}    0.6713
+{txt}       Total {c |} {res} 30808.1538        90  342.312821   {txt}Root MSE        =   {res} 10.608
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}         cpi{col 14}{c |}      Coef.{col 26}   Std. Err.{col 38}      t{col 46}   P>|t|{col 54}     [95% Con{col 67}f. Interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 9}efw {c |}{col 14}{res}{space 2} 10.19549{col 26}{space 2} 2.776333{col 37}{space 1}    3.67{col 46}{space 3}0.000{col 54}{space 4} 4.673472{col 67}{space 3}  15.7175
+{txt}{space 9}reg {c |}{col 14}{res}{space 2} 2.720653{col 26}{space 2} 2.140273{col 37}{space 1}    1.27{col 46}{space 3}0.207{col 54}{space 4}-1.536265{col 67}{space 3}  6.97757
+{txt}{space 9}pol {c |}{col 14}{res}{space 2}-.4484272{col 26}{space 2} .2523705{col 37}{space 1}   -1.78{col 46}{space 3}0.079{col 54}{space 4} -.950382{col 67}{space 3} .0535276
+{txt}{space 6}agedem {c |}{col 14}{res}{space 2} .1949229{col 26}{space 2} .0362562{col 37}{space 1}    5.38{col 46}{space 3}0.000{col 54}{space 4} .1228107{col 67}{space 3} .2670351
+{txt}{space 9}inf {c |}{col 14}{res}{space 2} .1075717{col 26}{space 2} .2053673{col 37}{space 1}    0.52{col 46}{space 3}0.602{col 54}{space 4}-.3008955{col 67}{space 3} .5160389
+{txt}{space 9}oil {c |}{col 14}{res}{space 2} .0888221{col 26}{space 2} .7776746{col 37}{space 1}    0.11{col 46}{space 3}0.909{col 54}{space 4}-1.457941{col 67}{space 3} 1.635586
+{txt}{space 2}int_oilefw {c |}{col 14}{res}{space 2}-.0123818{col 26}{space 2} .1331588{col 37}{space 1}   -0.09{col 46}{space 3}0.926{col 54}{space 4}-.2772292{col 67}{space 3} .2524656
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-49.46597{col 26}{space 2} 14.28524{col 37}{space 1}   -3.46{col 46}{space 3}0.001{col 54}{space 4}-77.87874{col 67}{space 3} -21.0532
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}{txt}
+{com}. * Regresión no. 3
+. outreg2 using results, append excel dec(2)
+{txt}{browse `"results.xml"'}
+{browse `"C:\Users\Daniel Sanchez\OneDrive\Documentos\personal\cursos\curso latex ecel (mío)\clases\día 4\stata"' :dir}{com} : {txt}{stata `"seeout using "results.txt""':seeout}
+
+{com}. * Igual que antes
+. 
+. 
+. log close
+      {txt}name:  {res}<unnamed>
+       {txt}log:  {res}C:\Users\Daniel Sanchez\OneDrive\Documentos\personal\cursos\curso latex ecel (mío)\clases\día 4\stata\ltxstat.smcl
+  {txt}log type:  {res}smcl
+ {txt}closed on:  {res}23 Apr 2021, 21:41:43
+{txt}{.-}
+{smcl}
+{txt}{sf}{ul off}

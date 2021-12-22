@@ -1,0 +1,185 @@
+
+
+\begin{document}
+% Simplemente pego el output que me sale de R, después de usar la función stargazer
+\begin{landscape}
+\section{Utilizando output de Rstudio}
+\begin{table}[H] \centering  % hay que cambiar esa opción de float a la que mejor nos sirva, H en este caso
+  \caption{Estadísticas Descriptivas de toda la base} 
+ \begin{tabular}{@{\extracolsep{5pt}}lccccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Pctl(25)} & \multicolumn{1}{c}{Pctl(75)} & \multicolumn{1}{c}{Max} \\ 
+\hline \\[-1.8ex] 
+efw & 162 & 6.860 & 0.954 & 3.340 & 6.228 & 7.620 & 8.940 \\ 
+cpi & 160 & 44.337 & 19.176 & 13.000 & 29.750 & 58.250 & 88.000 \\ 
+gdp\_pc & 161 & 21,448.500 & 21,529.720 & 0.000 & 5,029.181 & 31,774.820 & 114,110.000 \\ 
+scandinavia & 161 & 0.025 & 0.156 & 0.000 & 0.000 & 0.000 & 1.000 \\ 
+reg & 162 & 7.110 & 1.056 & 2.518 & 6.535 & 7.822 & 9.469 \\ 
+pol & 150 & 4.773 & 5.818 & $-$10.000 & 2.000 & 9.000 & 10.000 \\ 
+prot & 156 & 12.065 & 20.691 & 0.000 & 0.200 & 15.875 & 97.800 \\ 
+govexp & 161 & 30.895 & 12.104 & 11.139 & 21.031 & 38.088 & 86.242 \\ 
+foraid & 103 & 965,158,837.000 & 1,421,216,632.000 & 13,050,000.000 & 157,144,997.000 & 1,141,700,013.000 & 9,990,820,313.000 \\ 
+inf & 161 & 5.276 & 7.593 & $-$2.888 & 1.599 & 6.057 & 58.640 \\ 
+pop & 161 & 46,011,085.000 & 157,206,272.000 & 96,762.000 & 4,087,843.000 & 31,989,256.000 & 1,392,730,000.000 \\ 
+nat & 157 & 7.289 & 10.584 & 0.0002 & 0.658 & 8.902 & 54.916 \\ 
+oil & 96 & 5.673 & 11.022 & 0.0001 & 0.069 & 4.153 & 49.963 \\ 
+min & 112 & 2.610 & 4.909 & $-$0.0002 & 0.050 & 1.671 & 28.878 \\ 
+pres & 72 & 0.361 & 0.484 & 0.000 & 0.000 & 1.000 & 1.000 \\ 
+legint & 161 & 5.894 & 1.423 & 2.489 & 4.867 & 6.852 & 8.817 \\ 
+cci & 162 & $-$0.035 & 1.004 & $-$1.638 & $-$0.775 & 0.611 & 2.213 \\ 
+agedem & 161 & 27.578 & 38.789 & 0.000 & 0.000 & 33.000 & 216.000 \\ 
+\hline \\[-1.8ex] 
+\end{tabular} 
+\end{table} 
+\end{landscape}
+\clearpage
+
+\section{Otra sección}
+\begin{table}[H] \centering 
+  \caption{Estadística Descriptiva de solo Algunas Variables} 
+ \begin{tabular}{@{\extracolsep{5pt}}lccccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Pctl(25)} & \multicolumn{1}{c}{Pctl(75)} \\ 
+\hline \\[-1.8ex] 
+Economic Freedom Index & 162 & 6.860 & 0.954 & 6.228 & 7.620 \\ 
+Corruption Perceptions Index & 160 & 44.337 & 19.176 & 29.750 & 58.250 \\ 
+Regulation Score & 162 & 7.110 & 1.056 & 6.535 & 7.822 \\ 
+GDP per Capita & 161 & 21,448.500 & 21,529.720 & 5,029.181 & 31,774.820 \\ 
+Polity IV & 150 & 4.773 & 5.818 & 2.000 & 9.000 \\ 
+Inflation & 161 & 5.276 & 7.593 & 1.599 & 6.057 \\ 
+Age of Democracy & 161 & 27.578 & 38.789 & 0.000 & 33.000 \\ 
+\hline \\[-1.8ex] 
+\multicolumn{6}{l}{*Todas las variables son del 2015} \\ 
+\end{tabular} 
+\end{table} 
+
+\section{Explicando \texttt{multicolumn}}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Mes}} & \multicolumn{2}{c|}{Ventas} & \multicolumn{2}{c|}{Costos} & \multicolumn{2}{c|}{Utilidades} \\ \cline{2-7} 
+\multicolumn{1}{|c|}{}                     & Sucursal A   & Sucursal B   & Sucursal A   & Sucursal B   & Sucursal A     & Sucursal B     \\ \hline
+Enero                                      & 1,231.00     & 645.00       & 809.00       & 839.00       & 422.00         & (194.00)       \\ \hline
+Febrero                                    & 790.00       & 888.00       & 760.00       & 504.00       & 30.00          & 384.00         \\ \hline
+Marzo                                      & 626.00       & 812.00       & 548.00       & 684.00       & 78.00          & 128.00         \\ \hline
+Abril                                      & 913.00       & 804.00       & 813.00       & 543.00       & 100.00         & 261.00         \\ \hline
+Mayo                                       & 746.00       & 522.00       & 626.00       & 776.00       & 120.00         & (254.00)       \\ \hline
+Junio                                      & 791.00       & 853.00       & 544.00       & 522.00       & 247.00         & 331.00         \\ \hline
+\end{tabular}
+\end{table}
+
+\section{Más con \texttt{stargazer}}
+
+\subsection{Regresiones}
+
+\begin{table}[H] \centering 
+\begin{tabular}{@{\extracolsep{5pt}}lccc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-4} 
+\\[-1.8ex] & \multicolumn{3}{c}{cpi} \\ 
+\\[-1.8ex] & (1) & (2) & (3)\\ 
+\hline \\[-1.8ex] 
+ efw & 5.496$^{***}$ & 10.120$^{***}$ & 10.195$^{***}$ \\ 
+  & (1.984) & (2.731) & (2.855) \\ 
+  & & & \\ 
+ reg & 4.951$^{***}$ & 2.720 & 2.721 \\ 
+  & (1.659) & (2.040) & (2.048) \\ 
+  & & & \\ 
+ pol & $-$0.212 & $-$0.440$^{*}$ & $-$0.448$^{*}$ \\ 
+  & (0.219) & (0.253) & (0.245) \\ 
+  & & & \\ 
+ agedem & 0.218$^{***}$ & 0.195$^{***}$ & 0.195$^{***}$ \\ 
+  & (0.040) & (0.052) & (0.052) \\ 
+  & & & \\ 
+ inf &  & 0.108 & 0.108 \\ 
+  &  & (0.151) & (0.154) \\ 
+  & & & \\ 
+ oil &  & 0.017 & 0.089 \\ 
+  &  & (0.069) & (0.533) \\ 
+  & & & \\ 
+ efw:oil &  &  & $-$0.012 \\ 
+  &  &  & (0.094) \\ 
+  & & & \\ 
+ Constant & $-$34.041$^{***}$ & $-$49.009$^{***}$ & $-$49.466$^{***}$ \\ 
+  & (9.611) & (12.742) & (12.523) \\ 
+  & & & \\ 
+\hline \\[-1.8ex] 
+Observations & 149 & 91 & 91 \\ 
+R$^{2}$ & 0.667 & 0.697 & 0.697 \\ 
+Adjusted R$^{2}$ & 0.658 & 0.675 & 0.671 \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+\clearpage
+\section{Resultados de Stata}
+\subsection{Estadística Descriptiva}
+\begin{table}[H]
+\centering
+\begin{tabular}{llllll}
+\toprule
+Variable & Obs & Mean     & Std. Dev. & Min      & Max      \\
+\midrule
+efw      & 162 & 6.860247 & 0.95446   & 3.34     & 8.94     \\
+cpi      & 160 & 44.3375  & 19.17575  & 13       & 88       \\
+gdp\_pc  & 158 & 21855.75 & 21527.39  & 761.5242 & 114110   \\
+reg      & 162 & 7.110171 & 1.055856  & 2.517874 & 9.469451 \\
+pol      & 150 & 4.773333 & 5.818446  & -10      & 10       \\
+govexp   & 161 & 30.89522 & 12.10437  & 11.139   & 86.242   \\
+inf      & 161 & 5.275838 & 7.593192  & -2.88756 & 58.64022 \\
+pop      & 161 & 4.60E+07 & 1.57E+08  & 96762    & 1.39E+09 \\
+nat      & 157 & 7.289389 & 10.58401  & 0.000188 & 54.91636 \\
+oil      & 96  & 5.673407 & 11.02174  & 0.000139 & 49.96261 \\
+min      & 112 & 2.610412 & 4.908669  & -0.00019 & 28.87831 \\
+legint   & 161 & 5.893988 & 1.423183  & 2.489033 & 8.81732  \\
+cci      & 162 & -0.03456 & 1.004273  & -1.63818 & 2.212744 \\
+agedem   & 161 & 27.57764 & 38.78863  & 0        & 216      \\
+lgdp     & 158 & 9.432618 & 1.174718  & 6.635322 & 11.64492 \\
+lpop     & 161 & 16.18503 & 1.675233  & 11.48001 & 21.05453 \\
+infsq    & 161 & 85.13291 & 325.6964  & 0        & 3438.676 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Tablas de Regresión}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{lccc} \hline
+ & (1) & (2) & (3) \\
+VARIABLES & cpi & cpi & cpi \\ \hline
+ &  &  &  \\
+efw & 5.50*** & 10.12*** & 10.20*** \\
+ & (1.92) & (2.64) & (2.78) \\
+reg & 4.95*** & 2.72 & 2.72 \\
+ & (1.63) & (2.13) & (2.14) \\
+pol & -0.21 & -0.44* & -0.45* \\
+ & (0.19) & (0.24) & (0.25) \\
+agedem & 0.22*** & 0.20*** & 0.19*** \\
+ & (0.03) & (0.04) & (0.04) \\
+inf &  & 0.11 & 0.11 \\
+ &  & (0.20) & (0.21) \\
+oil &  & 0.02 & 0.09 \\
+ &  & (0.12) & (0.78) \\
+int\_oilefw &  &  & -0.01 \\
+ &  &  & (0.13) \\
+Constant & -34.04*** & -49.01*** & -49.47*** \\
+ & (7.91) & (13.34) & (14.29) \\
+ &  &  &  \\
+Observations & 149 & 91 & 91 \\
+ R-squared & 0.67 & 0.70 & 0.70 \\ \hline
+\multicolumn{4}{c}{ Standard errors in parentheses} \\
+\multicolumn{4}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+\end{tabular}
+\end{table}
+
+\end{document}
