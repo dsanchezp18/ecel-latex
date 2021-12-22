@@ -1,0 +1,81 @@
+% Parte 2, uso de imágenes subidas del computador
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+\usepackage{graphicx} % para incluir imágenes
+\usepackage{float} % para manejar el posicionamiento
+\usepackage{subcaption} % para títulos alternativos
+
+\usepackage{lipsum} % texto de prueba
+
+% para hipervínculos y referencias cruzadas, siempre debe estar al final
+\usepackage{hyperref}
+
+\begin{document}
+
+\listoffigures % para una lista de figuras
+\clearpage
+
+
+% incluir gráficos 
+\includegraphics{efw_cpi.png} %sale en su tamaño original
+
+\includegraphics[scale=0.5]{efw_cpi.png} % a escala
+
+\includegraphics[width= 5cm, height=6cm]{efw_cpi.png} % normal
+
+\includegraphics[width= \textwidth]{efw_cpi.png} % con comando textwidht
+
+\includegraphics[width= \textwidth, angle=45]{efw_cpi.png} % con comando textwidth y rotación 
+
+% manejar posicionamiento con \beginfigure
+
+\begin{figure}[H] % argumento de posición, exactamente aquí. Ver ta
+\centering
+\caption[EFW vs CCI]{Gráfico de Dispersión, Economic Freedom Index vs. Control of Corruption}  % para darle un título a la imagen, entre corchetes se da el título de la lista
+\includegraphics[scale=0.5]{efw_cpi.png} \\ 
+\begin{flushleft}
+El gráfico contiene información del Economic Freedom Index del Fraser Institute, y el índice del control de corrupción del Banco Mundial, uno de varios índices de gobernabilidad. La línea de tendencia lineal se estima de la forma $cci_i=\beta_0+\beta_1 efw_i+u_i$.
+\end{flushleft}
+\label{fig1:efwcpi}
+\end{figure}
+
+% formato tipo APA, con un cuadrado encima 
+\begin{center}
+\fbox{
+\begin{minipage}{\textwidth}
+\begin{figure}[H] % argumento de posición, exactamente aquí. Ver ta
+\caption[EFW vs CCI]{Gráfico de Dispersión, Economic Freedom Index vs. Control of Corruption}  % para darle un título a la imagen, entre corchetes se da el título de la lista
+\begin{center}
+\includegraphics[scale=0.5]{efw_cpi.png} \\ 
+\end{center}
+El gráfico contiene información del Economic Freedom Index del Fraser Institute, y el índice del control de corrupción del Banco Mundial, uno de varios índices de gobernabilidad. La línea de tendencia lineal se estima de la forma $cci_i=\beta_0+\beta_1 efw_i+u_i$.
+\label{fig2:efwcpia}
+\end{figure}
+\end{minipage}}
+\end{center}
+\lipsum
+
+Como se puede ver en el gráfico \ref{fig1:efwcpi}, la relación entre...
+
+% Subfiguras
+
+\begin{figure}[h]
+
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=5cm]{efw_cpi.png} 
+\caption{Caption1}
+\label{fig:subim1}
+\end{subfigure}
+\begin{subfigure}{0.5\textwidth}
+\includegraphics[width=0.9\linewidth, height=5cm]{lgdp_cpi.png}
+\caption{Caption 2}
+\label{fig:subim2}
+\end{subfigure}
+\caption{Caption for this figure with two images}
+\label{fig:image2}
+\end{figure}
+
+\end{document}

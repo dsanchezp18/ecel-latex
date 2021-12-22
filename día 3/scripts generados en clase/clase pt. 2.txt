@@ -1,0 +1,127 @@
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla, es-nosectiondot]{babel}
+\usepackage{lipsum}
+\usepackage{float}
+\usepackage{lscape}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{tikz}
+\usepackage{pgfplots}
+    \pgfplotsset{width=10cm, height=7cm, compat=newest}
+
+\title{Clase 3}
+\author{Daniel Sanchez}
+\date{April 2021}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\listoftables
+\listoffigures
+\clearpage
+
+\section{Introduction}
+\lipsum[1-2]
+\begin{landscape}
+\section{Modo Horizontal}
+\begin{table}[H]
+
+\begin{tabular}{l|llllllllll|l}
+\toprule
+Variable    & mean      & sd        & median    & trimmed   & mad       & min     & max        & range      & skew   & kurtosis & se       \\
+\midrule
+code*       & 81.50     & 46.91     & 81.50     & 81.50     & 60.05     & 1.00    & 162.00     & 161.00     & -      & (1.22)   & 3.69     \\
+country*    & 81.50     & 46.91     & 81.50     & 81.50     & 60.05     & 1.00    & 162.00     & 161.00     & -      & (1.22)   & 3.69     \\
+efw         & 6.86      & 0.95      & 6.92      & 6.92      & 1.04      & 3.34    & 8.94       & 5.60       & (0.58) & 0.32     & 0.07     \\
+cpi         & 44.34     & 19.18     & 38.50     & 42.93     & 17.05     & 13.00   & 88.00      & 75.00      & 0.62   & (0.63)   & 1.52     \\
+gdp\_pc     & 21,448.50 & 21,529.72 & 13,601.30 & 18,104.31 & 15,640.88 & -       & 114,109.97 & 114,109.97 & 1.50   & 2.39     & 1,697    \\
+region*     & 4.74      & 2.23      & 4.00      & 4.68      & 1.48      & 1.00    & 8.00       & 7.00       & 0.45   & (1.33)   & 0.18     \\
+inc\_group* & 3.43      & 1.21      & 4.00      & 3.42      & 1.48      & 1.00    & 5.00       & 4.00       & (0.00) & (1.52)   & 0.10     \\
+scandinavia & 0.02      & 0.16      & -         & -         & -         & -       & 1.00       & 1.00       & 6.05   & 34.80    & 0.01     \\
+reg         & 7.11      & 1.06      & 7.13      & 7.18      & 0.95      & 2.52    & 9.47       & 6.95       & (0.80) & 1.59     & 0.08     \\
+pol         & 4.77      & 5.82      & 7.00      & 5.71      & 4.45      & (10.00) & 10.00      & 20.00      & (1.11) & (0.02)   & 0.48     \\
+prot        & 12.07     & 20.69     & 1.90      & 7.26      & 2.82      & -       & 97.80      & 97.80      & 2.33   & 5.48     & 1.66     \\
+govexp      & 30.90     & 12.10     & 30.72     & 29.97     & 13.47     & 11.14   & 86.24      & 75.10      & 1.23   & 3.54     & 0.95     \\
+inf         & 5.28      & 7.59      & 3.00      & 3.83      & 2.68      & (2.89)  & 58.64      & 61.53      & 3.62   & 17.72    & 0.60     \\
+col*        & 8.65      & 4.21      & 9.00      & 8.66      & 1.48      & 1.00    & 16.00      & 15.00      & (0.27) & (0.63)   & 0.33     \\
+nat         & 7.29      & 10.58     & 2.35      & 5.04      & 3.39      & 0.00    & 54.92      & 54.92      & 2.07   & 4.25     & 0.84     \\
+oil         & 5.67      & 11.02     & 0.50      & 2.88      & 0.73      & 0.00    & 49.96      & 49.96      & 2.40   & 5.16     & 1.12     \\
+min         & 2.61      & 4.91      & 0.48      & 1.39      & 0.69      & (0.00)  & 28.88      & 28.88      & 2.66   & 7.94     & 0.46     \\
+pres        & 0.36      & 0.48      & -         & 0.33      & -         & -       & 1.00       & 1.00       & 0.57   & (1.70)   & 0.06     \\
+legint      & 5.89      & 1.42      & 5.74      & 5.87      & 1.49      & 2.49    & 8.82       & 6.33       & 0.16   & (0.66)   & 0.11     \\
+cci         & (0.03)    & 1.00      & (0.28)    & (0.11)    & 0.88      & (1.64)  & 2.21       & 3.85       & 0.65   & (0.49)   & 0.08     \\
+agedem      & 27.58     & 38.79     & 16.00     & 18.90     & 23.72     & -       & 216.00     & 216.00     & 2.12   & 4.87     & 3.06    \\
+\bottomrule
+\end{tabular}
+\caption{Estadística Descriptiva}
+\end{table}
+\end{landscape}
+\section{Matemáticas}
+
+\begin{equation}
+    \Delta y_{i t}=\delta_{2} \Delta d 2_{t}+\delta_{3} \Delta d 3_{t}+\beta_{1} \Delta x_{i t 1}+\ldots+\beta_{k} \Delta x_{i t k}+\Delta u_{i t}
+\end{equation}
+$$\sum x^{3} \beta$$
+\section{Display Style}
+$$\hat{\beta}_{1}=\frac{\displaystyle \sum_{i=1}^{n} \left( x_{i}-\bar{x}\right) y_{i}}{\displaystyle \sum_{i=1}^{n}\left(x_{i}-\bar{x}\right)^{2}}$$ % bar imprime una línea encima
+\section{Imágenes}
+\begin{figure}[H]
+    \centering
+    \caption[Gráfico 1]{Gráfico 1 Tendencia Lineal}
+    \includegraphics[scale=0.6]{efw_cpi.png}
+    \flushleft
+    Fuente Banco Mundial, Elaboración del Autor.
+    \label{fig:efw}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+    \includegraphics[width=0.9\linewidth, height=5cm]{efw_cpi.png}
+    \end{subfigure}
+     \begin{subfigure}{0.5\textwidth}
+     \includegraphics[width=0.9\linewidth, height=5cm]{lgdp_cpi.png}
+     \end{subfigure}
+    \caption{Caption}
+    \label{fig:my_label}
+\end{figure}
+\clearpage
+\section{Figuras con \LaTeX}
+\begin{tikzpicture}
+\draw[gray,thick] (0,0) -- (2,4);
+\draw[red, thick] (1,2) -- (5,7);
+\end{tikzpicture}
+\clearpage
+
+\section{Gráficos mediante \textsf{pgfplots}}
+\begin{figure}[H]
+\centering
+  \begin{tikzpicture}
+    \begin{axis}[xlabel=$x$, ylabel=$f(x)$]
+    \addplot[color=blue]{x^2}; \addlegendentry{$x^2$}
+    \addplot[color=red]{exp(x)+x^2+(2*x)}; \addlegendentry{$e^x+x^2+2x$}
+    \end{axis}
+\end{tikzpicture}
+\caption{Gráfico de funciones}
+\end{figure}
+\clearpage
+\begin{figure}[H]
+\begin{tikzpicture}
+  \begin{axis}
+  \addplot[color=blue, only marks] coordinates {(0,0) (5,5) (12,4)};
+  \end{axis}
+\end{tikzpicture}
+\end{figure}
+\clearpage
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[xlabel={Economic Freedom Index}, ylabel={Corruption Perceptions Index}]
+      \addplot[black, only marks] table {grafico1.txt};
+      \addplot[blue] coordinates {(3.34,2.99) (8.94, 73.68)};
+    \end{axis}
+    \end{tikzpicture}
+\end{figure}
+\end{document}

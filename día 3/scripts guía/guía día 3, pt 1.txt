@@ -1,0 +1,99 @@
+\documentclass[12pt,a4paper]{article} % Empiezo todos mis códigos con esto
+\usepackage[utf8]{inputenc} % para caracteres especiales
+\usepackage[spanish]{babel} % para escribir en español
+\usepackage{amsmath,amssymb,amsfonts} % para matemáticas 
+\usepackage{lscape} % para cambiar la orientación de páginas en algunos espacios en específico
+\usepackage{booktabs} % para líneas especiales
+\usepackage{float} % para manejar ubicación de tablas e imágenes
+\usepackage{lipsum} % dummy text
+\usepackage{longtable} % para tablas largas que tomaran más de una página
+
+\begin{document}
+
+\section{Introducción}
+\lipsum
+
+\begin{landscape} % empieza un ambiente en donde rota todo el input que le doy a LaTeX
+\section{Página en horizontal}
+\lipsum[1-5]
+\clearpage
+\section{Otra página en horizontal, con una tabla}
+\begin{table}[H]
+\begin{tabular}{lllllllllllll}
+\multicolumn{1}{c}{Variable} & \multicolumn{1}{c}{vars} & \multicolumn{1}{c}{mean} & \multicolumn{1}{c}{sd} & \multicolumn{1}{c}{median} & \multicolumn{1}{c}{trimmed} & \multicolumn{1}{c}{mad} & \multicolumn{1}{c}{min} & \multicolumn{1}{c}{max} & \multicolumn{1}{c}{range} & \multicolumn{1}{c}{skew} & \multicolumn{1}{c}{kurtosis} & \multicolumn{1}{c}{se} \\
+code*                        & 1                        & 81.5                     & 46.9094873             & 81.5                       & 81.5                        & 60.0453                 & 1                       & 162                     & 161                       & 0                        & -1.22224396                  & 3.6855574              \\
+country*                     & 2                        & 81.5                     & 46.9094873             & 81.5                       & 81.5                        & 60.0453                 & 1                       & 162                     & 161                       & 0                        & -1.22224396                  & 3.6855574              \\
+efw                          & 3                        & 6.86024691               & 0.95445991             & 6.915                      & 6.91684615                  & 1.03782                 & 3.34                    & 8.94                    & 5.6                       & -0.58178058              & 0.31564742                   & 0.07498945             \\
+cpi                          & 4                        & 44.3375                  & 19.1757471             & 38.5                       & 42.9296875                  & 17.0499                 & 13                      & 88                      & 75                        & 0.62275854               & -0.63067298                  & 1.51597592             \\
+gdp\_pc                      & 5                        & 21448.5006               & 21529.7221             & 13601.3034                 & 18104.3066                  & 15640.8785              & 0                       & 114109.973              & 114109.973                & 1.49602797               & 2.38655735                   & 1696.7798              \\
+region*                      & 6                        & 4.74074074               & 2.22787411             & 4                          & 4.68461538                  & 1.4826                  & 1                       & 8                       & 7                         & 0.45236373               & -1.33239211                  & 0.17503832             \\
+inc\_group*                  & 7                        & 3.42592593               & 1.21484378             & 4                          & 3.41538462                  & 1.4826                  & 1                       & 5                       & 4                         & -0.00389628              & -1.52358151                  & 0.09544714             \\
+scandinavia                  & 8                        & 0.02484472               & 0.15613738             & 0                          & 0                           & 0                       & 0                       & 1                       & 1                         & 6.0485708                & 34.8014826                   & 0.01230535             \\
+reg                          & 9                        & 7.11017142               & 1.05585569             & 7.12557626                 & 7.18177365                  & 0.94942388              & 2.51787416              & 9.46945097              & 6.95157681                & -0.80071482              & 1.58654856                   & 0.08295586             \\
+pol                          & 10                       & 4.77333333               & 5.81844633             & 7                          & 5.70833333                  & 4.4478                  & -10                     & 10                      & 20                        & -1.10888455              & -0.01971415                  & 0.47507415             \\
+prot                         & 11                       & 12.0653846               & 20.6906077             & 1.9                        & 7.25555556                  & 2.81694                 & 0                       & 97.8                    & 97.8                      & 2.33000758               & 5.47713237                   & 1.6565744              \\
+govexp                       & 12                       & 30.8952174               & 12.1043748             & 30.715                     & 29.9723953                  & 13.4664558              & 11.139                  & 86.242                  & 75.103                    & 1.23025861               & 3.53683693                   & 0.95395837             \\
+foraid                       & 13                       & 965158837                & 1421216632             & 565159973                  & 687951085                   & 631691348               & 13050000.2              & 9990820313              & 9977770313                & 3.9429819                & 19.4013744                   & 140036636              \\
+inf                          & 14                       & 5.27583827               & 7.59319153             & 3.00116964                 & 3.83312699                  & 2.6818487               & -2.88755944             & 58.6402201              & 61.5277795                & 3.6192892                & 17.7215831                   & 0.59842733             \\
+pop                          & 15                       & 46011085.4               & 157206272              & 10283822                   & 18515925.1                  & 12389566.3              & 96762                   & 1392730000              & 1392633238                & 7.53958697               & 60.204956                    & 12389589.9             \\
+col*                         & 16                       & 8.64814815               & 4.21100632             & 9                          & 8.66153846                  & 1.4826                  & 1                       & 16                      & 15                        & -0.2673744               & -0.63054845                  & 0.3308479              \\
+nat                          & 17                       & 7.28938918               & 10.5840104             & 2.35447548                 & 5.03672522                  & 3.38947874              & 0.00018759              & 54.9163561              & 54.9161685                & 2.07242687               & 4.25143357                   & 0.84469599             \\
+oil                          & 18                       & 5.67340723               & 11.0217353             & 0.49780591                 & 2.87815576                  & 0.73450497              & 0.00013879              & 49.9626131              & 49.9624743                & 2.4038308                & 5.16436594                   & 1.12490115             \\
+min                          & 19                       & 2.61041204               & 4.90866891             & 0.4758688                  & 1.38813589                  & 0.69350717              & -0.00018786             & 28.8783133              & 28.8785012                & 2.65725436               & 7.94224843                   & 0.46382561             \\
+pres                         & 20                       & 0.36111111               & 0.48369341             & 0                          & 0.32758621                  & 0                       & 0                       & 1                       & 1                         & 0.56630864               & -1.70236243                  & 0.05700381             \\
+legint                       & 21                       & 5.89398776               & 1.4231829              & 5.73857                    & 5.87302245                  & 1.49367502              & 2.48903333              & 8.81732                 & 6.32828667                & 0.15791735               & -0.66133994                  & 0.11216253             \\
+cci                          & 22                       & -0.03456243              & 1.00427301             & -0.27933745                & -0.11046181                 & 0.8830588               & -1.638176               & 2.212744                & 3.85092                   & 0.64826822               & -0.49333725                  & 0.07890314             \\
+agedem                       & 23                       & 27.5776398               & 38.7886323             & 16                         & 18.8992248                  & 23.7216                 & 0                       & 216                     & 216                       & 2.11808776               & 4.86849637                   & 3.05697248            
+\end{tabular}
+\caption{Tabla de Estadística Generada por Python}
+\label{tab:1}
+% de todas formas sigue siendo demasiado grande 
+\end{table}
+\clearpage
+% Para solucionar el problema, debemos utilizar el long table o bajarle el número de columnas 
+\section{Otra Hoja Horizontal, con una tabla más corta}
+\begin{table}[H]
+\begin{tabular}{l|lllllllllll} % l (left) para alineado izquierda, c (center) para centrado, r (right) para alineado a la derecha
+\toprule % línea horizontal para el principio de la tabla
+Variable    & mean      & sd        & median    & trimmed   & mad       & min     & max        & range      & skew   & kurtosis & se       \\
+\midrule % línea horizontal para la mitad de las tablas, es decir entre filas
+code*       & 81.50     & 46.91     & 81.50     & 81.50     & 60.05     & 1.00    & 162.00     & 161.00     & -      & (1.22)   & 3.69     \\
+country*    & 81.50     & 46.91     & 81.50     & 81.50     & 60.05     & 1.00    & 162.00     & 161.00     & -      & (1.22)   & 3.69     \\
+efw         & 6.86      & 0.95      & 6.92      & 6.92      & 1.04      & 3.34    & 8.94       & 5.60       & (0.58) & 0.32     & 0.07     \\
+cpi         & 44.34     & 19.18     & 38.50     & 42.93     & 17.05     & 13.00   & 88.00      & 75.00      & 0.62   & (0.63)   & 1.52     \\
+gdp\_pc     & 21,448.50 & 21,529.72 & 13,601.30 & 18,104.31 & 15,640.88 & -       & 114,109.97 & 114,109.97 & 1.50   & 2.39     & 1,697    \\
+region*     & 4.74      & 2.23      & 4.00      & 4.68      & 1.48      & 1.00    & 8.00       & 7.00       & 0.45   & (1.33)   & 0.18     \\
+inc\_group* & 3.43      & 1.21      & 4.00      & 3.42      & 1.48      & 1.00    & 5.00       & 4.00       & (0.00) & (1.52)   & 0.10     \\
+scandinavia & 0.02      & 0.16      & -         & -         & -         & -       & 1.00       & 1.00       & 6.05   & 34.80    & 0.01     \\
+reg         & 7.11      & 1.06      & 7.13      & 7.18      & 0.95      & 2.52    & 9.47       & 6.95       & (0.80) & 1.59     & 0.08     \\
+pol         & 4.77      & 5.82      & 7.00      & 5.71      & 4.45      & (10.00) & 10.00      & 20.00      & (1.11) & (0.02)   & 0.48     \\
+prot        & 12.07     & 20.69     & 1.90      & 7.26      & 2.82      & -       & 97.80      & 97.80      & 2.33   & 5.48     & 1.66     \\
+govexp      & 30.90     & 12.10     & 30.72     & 29.97     & 13.47     & 11.14   & 86.24      & 75.10      & 1.23   & 3.54     & 0.95     \\
+inf         & 5.28      & 7.59      & 3.00      & 3.83      & 2.68      & (2.89)  & 58.64      & 61.53      & 3.62   & 17.72    & 0.60     \\
+col*        & 8.65      & 4.21      & 9.00      & 8.66      & 1.48      & 1.00    & 16.00      & 15.00      & (0.27) & (0.63)   & 0.33     \\
+nat         & 7.29      & 10.58     & 2.35      & 5.04      & 3.39      & 0.00    & 54.92      & 54.92      & 2.07   & 4.25     & 0.84     \\
+oil         & 5.67      & 11.02     & 0.50      & 2.88      & 0.73      & 0.00    & 49.96      & 49.96      & 2.40   & 5.16     & 1.12     \\
+min         & 2.61      & 4.91      & 0.48      & 1.39      & 0.69      & (0.00)  & 28.88      & 28.88      & 2.66   & 7.94     & 0.46     \\
+pres        & 0.36      & 0.48      & -         & 0.33      & -         & -       & 1.00       & 1.00       & 0.57   & (1.70)   & 0.06     \\
+legint      & 5.89      & 1.42      & 5.74      & 5.87      & 1.49      & 2.49    & 8.82       & 6.33       & 0.16   & (0.66)   & 0.11     \\
+cci         & (0.03)    & 1.00      & (0.28)    & (0.11)    & 0.88      & (1.64)  & 2.21       & 3.85       & 0.65   & (0.49)   & 0.08     \\
+agedem      & 27.58     & 38.79     & 16.00     & 18.90     & 23.72     & -       & 216.00     & 216.00     & 2.12   & 4.87     & 3.06    \\
+\bottomrule % línea horizontal, siempre del fondo
+\end{tabular}
+\end{table}
+
+\end{landscape}
+
+
+% Econometría y display style
+\section{Display Style}
+
+$$\hat{\beta}_{1}=\frac{\sum_{i=1}^{n}\left(x_{i}-\bar{x}\right) y_{i}}{\sum_{i=1}^{n}\left(x_{i}-\bar{x}\right)^{2}}$$ % bar imprime una línea encima
+
+$$\hat{\beta}_{1}=\frac{\displaystyle\sum_{i=1}^{n}\left(x_{i}-\bar{x}\right) y_{i}}{\displaystyle \sum_{i=1}^{n}\left(x_{i}-\bar{x}\right)^{2}}$$ 
+
+% uno por uno ese display style, a veces sale raro tonces se necesita poner display style uno por uno. pilas la diferencia entre las dos
+
+
+
+\end{document}

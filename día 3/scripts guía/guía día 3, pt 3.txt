@@ -1,0 +1,48 @@
+% Tikz y Pgfplots, haciendo gráficas con LaTeX
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz} % para hacer gráficos
+\usepackage{pgfplots} % para hacer gráficos de uso más simple, está basado en tikz
+\pgfplotsset{width=10cm, height=8cm,compat=newest} % configuración de default para todos los gráficos del documento, sí se puede cambiar para cada uno
+% defino un tamaño fijo para todos los plots
+% establezco la versión del paquete, siempre mantener en newest a menos que de problemas
+
+\begin{document}
+\section{Usando Tikz Base}
+\begin{tikzpicture} % todo gráfico de tikz o pgfplots debe empezar con esto
+\draw[gray, thick] (0,0) -- (2,4); % dibujar una línea gris y gruesa, de coordenadas (0,0) a (2,4)
+\draw[gray,thick] (0,0) -- (2,2); % lo mismo pero con otras coordenadas
+\end{tikzpicture}
+
+% Utilizando PGFPLOTS
+
+% Gráficando funciones
+\section{PGFplots}
+\subsection{Gráficas de funciones}
+\begin{tikzpicture}
+\begin{axis} [xlabel=$x$, ylabel={$f(x)$}, axis lines= left]
+\addplot[color=red]{exp(x)+x^2}; % definir la función exponencial
+\addlegendentry{$e^x+x^2$}; % le doy una entrada a la leyenda del gráfico
+\addplot[color=blue]{x^2-(5*x)+2}; % definir la función cuadrática
+\addlegendentry{$x^2-5x+1$}
+\end{axis}
+\end{tikzpicture}
+
+\subsection{Gráfica con coordenadas}
+% A partir de datos, ejemplo simple
+\begin{tikzpicture}
+\begin{axis}
+\addplot coordinates {(0,0) (5,5) (10,10)};
+\end{axis}
+\end{tikzpicture}
+
+% A partir de datos, con un archivo
+\subsection{Gráfica con Coordenadas de un archivo \texttt{.txt}}
+\begin{tikzpicture}
+\begin{axis}[xlabel={Economic Freedom Index}, ylabel={Corruption Perceptions Index}]
+\addplot[blue, only marks] table {efw_cpi.txt};
+\addplot[red] coordinates {(3.34,2.9957) (8.94,73.68)};
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

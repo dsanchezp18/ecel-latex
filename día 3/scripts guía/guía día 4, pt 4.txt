@@ -1,0 +1,47 @@
+% Beamer (Presentaciones con LaTeX)
+
+\documentclass{beamer}% un nuevo tipo de documento, es de presentaciones. hay otros pero son parecidos
+
+\usepackage[utf8]{inputenc} 
+\usepackage[spanish]{babel}
+
+% definimos parámetros para presentaciones
+\title{\LaTeX\  para presentaciones}
+\subtitle{Presentación Ejemplo}
+\author{ECEL Research Group}
+\date{Abril 2021}
+
+% le damos mejor apariencia
+\usetheme{Madrid}
+\usecolortheme{beaver}
+
+
+
+\usepackage{lipsum}
+
+\begin{document}
+
+\begin{frame}
+\maketitle % hacer el título
+\end{frame}
+
+\begin{frame}
+\tableofcontents
+\end{frame}
+
+\section{Introducción}
+\begin{frame}{Qué es beamer}
+\lipsum[1]
+\end{frame}
+
+\begin{frame}{Qué es \LaTeX}
+\begin{itemize}
+	\item texto
+	\item texto
+	\item texto
+	\end{itemize}
+\end{frame}
+\section{Desarrollo}
+\section{Conclusión}
+
+\end{document}
