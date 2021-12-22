@@ -1,0 +1,51 @@
+\documentclass[12pt]{article} % Es lo primero que hacemos en un código LaTeX, especificamos el tipo de documento que vamos a escribir
+
+% Comandos empiezan con un backslash, parámetros se se señalan con llaves, y parámetros 
+% Podemos modificar los parámetros básicos default para todo el documento con las opciones del document class (poner tamaño 11)
+
+\begin{document} % para comenzar el texto principal del documento
+% \begin{} siempre comienza un environment/ambiente, debemos siempre FINALIZAR el ambiente con su respectivo \end{}
+
+Este es el primer documento del curso del ECEL Research Group. 
+
+Hoy vamos a revisar los fundamentales para crear un PDF con algo de texto dentro de él. 
+% El espaciado no funciona como en Word
+% Un espacio te da un salto de línea, pero más de uno no hace nada
+% Aquí debemos empezar a usar comandos para delimitar la posición de nuestro texto. 
+% Doble backslash nos hace saltar una línea entera. Más dobles backslash nos hacen saltar más.
+% Un solo backslash nos hace espaciar. 
+
+% Cuando utilizamos doble backslash en la misma línea, el compilador asume que NO queremos un nuevo párrafo, solo empezar una nueva línea.
+% No se genera una sangría
+
+El primer documento que haremos es recrear una página de un libro. \\
+El libro fue escrito en 2021. 
+
+\LaTeX % Un comando que no requiere ningún argumento
+% necesita siempre que se ponga un espacio adelante, mediante el backslash
+% Por ejemplo
+
+\LaTeX\ requiere tener una distribución de \TeX\ instalada en el computador, así como un editor con macros cargados. 
+
+% Los carácteres especiales de LaTeX no pueden ser usados libremente en el documento
+% Debemos usar un comando para poder utilizarlo
+
+El PIB per cápita se redujo en un 20% ese año
+
+El PIB per cápita se redujo en un 20\% ese año. % se utiliza un comando
+
+% Para el backslash, usamos otro comando
+
+La ubicación de mi archivo esta en Mi PC\textbackslash Documentos 
+
+% El siguiente texto contiene 
+
+A partir de diciembre de 2007, la pobreza por ingresos se obtiene actualizando la \textbf{línea oficial de pobreza por consumo mediante el Índice de Precios al Consumidor (IPC)}. Para tal
+efecto, aquellos individuos cuyo ingreso total per cápita, en relación a su hogar, sea inferior a la línea de pobreza son identificados \textit{pobres por ingresos}. Finalmente, se calcula la
+proporción de pobres \underline{frente al total de la población}. Igual procedimiento se realiza para el cálculo de la pobreza extrema por ingresos.
+
+En diciembre de 2020 la línea de pobreza se ubica en USD 84,05 mensuales per cápita, mientras que la línea de pobreza extrema en USD 47,37 mensuales per cápita.
+
+
+
+\end{document}

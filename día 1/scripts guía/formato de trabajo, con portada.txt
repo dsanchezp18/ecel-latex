@@ -1,0 +1,63 @@
+\documentclass[a4paper, 12pt] {article} % Siempre empezar así todo código de LaTeX
+
+% Paquetes fundamentales, para todos los documentos
+\usepackage[utf8]{inputenc} % para manejar caracteres de UTF8
+\usepackage[spanish, es-lcroman,es-nosectiondot]{babel} % para escribir en español, así salen títulos nativos en español (Índice)
+% los parámetros opcionales quitan el punto después de las secciones
+\usepackage[margin=1in]{geometry} % margen de una pulgada a cada lado
+\usepackage{setspace}
+	\onehalfspacing
+
+\usepackage{fancyhdr} % para hacer márgenes
+    \pagestyle{fancy} % estilo de página (varias opciones, ver documentación o tutorial del paquete fancy HDR para todas las opciones)
+    \fancyhf{}
+     \fancyhead[LO]{Formato para Portadas, Encabezados y Pies de Página} % el texto encabezado a la izquierda (Left) de páginas impares (Odd)
+     \fancyhead[RO]{Spring 2021} % el texto encabezado a la derecha (Right) de páginas impares (Odd)
+     \fancyhead[LE]{ECEL Research Group}  % el texto encabezado a la izquierda (Left) de páginas pares (Even)
+     \fancyhead[RE]{\LaTeX} % el texto encabezado a la derecha (Right) de páginas pares (Even)
+     \fancyfoot[CO,CE]{-\hspace{0.1cm}\thepage\hspace{0.1cm}-} % el pie de página de las páginas pares e impares, en el centro (Center). \thepage: commando para mostrar el número de página
+     
+% Misc
+\usepackage{lipsum} % texto de prueba
+\usepackage{float} % float para figuras y tablas
+\usepackage{booktabs} % para lineas en tablas
+
+\begin{document} % Empezar texto principal
+
+\begin{titlepage} % Empezar portada
+\centering % para centrar sin necesidad de crear un nuevo ambiente
+\huge{\textbf{ECEL Research Group}} % Se pueden usar comandos dentro de comandos
+
+\huge{Quito} 
+\vspace{6cm} % Espacio vertical en blanco de 6 cm
+
+\Huge{\textsc{Formato de Trabajo Final}} \\ %recordar que doble backslash es un espacio, o "line break"
+\Huge{\textsc{Curso \LaTeX}} \\
+\Large{Abril 2021} \\
+\vspace{10cm}
+
+\flushright % para dejar de centrar, alinear  a la derecha
+Universidad San Francisco de Quito\\
+Spring 2021\\
+Hecho con \LaTeX
+\end{titlepage}
+
+% Empiezo mi sección inicial con numerado especial
+\pagenumbering{roman} % establezco el tipo de numeración de aquí en adelante
+\begin{abstract} % ambiente especial de abstract, solo cambia el tamaño y da un título de Resumen
+    \lipsum[1-4] % texto de prueba, quiero los párrafos del 1 al 4 de Lipsum
+\end{abstract}
+\thispagestyle{plain} % para quitar los encabezados y pies de página especiales de esta página solamente
+\clearpage % paso a la siguiente página directamente
+\tableofcontents % comando de tabla de contenidos o índice
+\clear page
+
+% Empiezo la parte normal del documento
+\pagenumbering{arabic} % numeros arabigos, automáticamente empieza desde el 0. Estoy cambiando lo que estaba antes, desde esta página será arábicos
+\section{Introducción} % Sección
+\lipsum
+
+\section{Metodología}
+\lipsum
+
+\end{document} % finalizo mi script

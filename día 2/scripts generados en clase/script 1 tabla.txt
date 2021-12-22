@@ -1,0 +1,39 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{lscape} % para cambiar la orientación de página en ciertas partes del document
+
+\title{Clase 2}
+\author{Daniel Sanchez}
+\date{April 2021}
+
+\begin{document}
+
+\maketitle
+
+\section{Tablas}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{cccc}
+Inicial & Valor 1  & Valor 2  & Valor 3  \\
+A       & 0.329501 & 0.58128  & 0.970523 \\
+B       & 0.9097   & 0.750433 & 0.286847 \\
+C       & 0.703073 & 0.747928 & 0.738106 \\
+D       & 0.389228 & 0.482638 & 0.440315 \\
+F       & 0.842479 & 0.083364 & 0.947623 \\
+A       & 0.684802 & 0.098189 & 0.376308 \\
+B       & 0.218689 & 0.853194 & 0.731114 \\
+C       & 0.197869 & 0.671242 & 0.979902 \\
+D       & 0.917247 & 0.58939  & 0.878509 \\
+F       & 0.318344 & 0.629928 & 0.570729 \\
+A       & 0.978846 & 0.748896 & 0.721369 \\
+B       & 0.377603 & 0.959699 & 0.902347 \\
+C       & 0.94746  & 0.02421  & 0.586404 \\
+D       & 0.265754 & 0.068454 & 0.653458 \\
+F       & 0.142145 & 0.726593 & 0.513599 \\
+A       & 0.627666 & 0.104351 & 0.204981 \\
+B       & 0.071324 & 0.935844 & 0.929889 
+\end{tabular}
+\caption{Ventas por Inicial}
+\end{table}

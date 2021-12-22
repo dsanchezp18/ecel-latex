@@ -1,0 +1,124 @@
+\documentclass[a4paper, 12pt]{article} % Siempre empezar así todo código de LaTeX
+
+\usepackage[utf8]{inputenc} % para manejar caracteres de UTF8
+\usepackage[spanish, es-lcroman,es-nosectiondot]{babel} % para escribir en españo
+
+\usepackage{lipsum} % para texto dummy 
+
+\usepackage{setspace} % para cambiar el interlineado
+	\onehalfspacing  % mostrar como cambiar a interlineado doble
+
+\usepackage{booktabs} % para líneas especiales
+
+\setlength{\parindent}{4em} % para cambiar la longitud de la sangría
+\setlength{\parskip}{1em} % para cambiar la longitud del espacio entre párrafos
+% Em's son unidades relativas, en guía de OVERLEAF se puede ver como son. 
+
+\usepackage{enumitem} % esto para hacer cambios en las listas, enumeración
+
+\begin{document}
+
+% Una tabla
+
+\section{Metodología}
+\begin{table}[h] % h es para poner que está aquí
+\centering
+\begin{tabular}{llll} % l es que se alinee a la izquierda, c es para centro, r para derecha
+\toprule % mediante el paquete booktabs, esto dibuja una línea
+Inicial & Valor 1  & Valor 2  & Valor 3  \\
+\midrule
+A       & 0.329501 & 0.58128  & 0.970523 \\
+B       & 0.9097   & 0.750433 & 0.286847 \\
+C       & 0.703073 & 0.747928 & 0.738106 \\
+D       & 0.389228 & 0.482638 & 0.440315 \\
+F       & 0.842479 & 0.083364 & 0.947623 \\
+A       & 0.684802 & 0.098189 & 0.376308 \\
+B       & 0.218689 & 0.853194 & 0.731114 \\
+C       & 0.197869 & 0.671242 & 0.979902 \\
+D       & 0.917247 & 0.58939  & 0.878509 \\
+F       & 0.318344 & 0.629928 & 0.570729 \\
+A       & 0.978846 & 0.748896 & 0.721369 \\
+B       & 0.377603 & 0.959699 & 0.902347 \\
+C       & 0.94746  & 0.02421  & 0.586404 \\
+D       & 0.265754 & 0.068454 & 0.653458 \\
+F       & 0.142145 & 0.726593 & 0.513599 \\
+A       & 0.627666 & 0.104351 & 0.204981 \\
+B       & 0.071324 & 0.935844 & 0.929889 \\
+\bottomrule % para la línea final, se necesita un espacio
+\end{tabular}
+\caption{Ventas por Inicial} % titula la tabla
+\end{table}
+
+% Como alternativa a usar centering, flush left, flush right se utiliza este tipo de ambientes
+
+\begin{center}
+La pobreza creció en la pandemia
+\end{center}
+
+\begin{flushright}
+Los ingresos se redujeron en la pandemia
+\end{flushright}
+
+% Podemos tambien crear ambientes de letra más pequeña, o más grande con large, Large, Huge, huge. No se necesitaría \huge, \large, etc.
+\begin{tiny}
+A un nivel de aproximadamente 300 dólares en promedio
+\end{tiny}
+
+% Alternativamente, sin crear ambientes de letra más pequeña
+\footnotesize hola
+\\
+
+% Es simple hacer listas dentro de listas
+\begin{enumerate}
+\item Papas
+\begin{enumerate}
+	\item Fritas
+	\item Puré
+\end{enumerate}
+\item Aguacates
+\item Zanahoria
+\begin{itemize}
+	\item Blanca
+	\item Normal
+\end{itemize}
+\end{enumerate}
+
+% Manipular la numeración de las listas
+\begin{enumerate}[label=\textbf{(E.\arabic*)}] % modifico la numeración de esta lista. ahora cada elemento se enumera con números arábigos, en negrilla y con E. 
+ \item Prueba matemática directa
+ \begin{enumerate}[label=\textbf{(\roman*)}]
+ \item Para variable A
+ \item Para variable B
+ \end{enumerate}
+  \item Prueba matemática inválida
+ \item Prueba matemática por inducción
+\end{enumerate}
+% Tres principales enumeraciones: arabigos (arabic*), romanos (roman*), alfabetico (alph*)
+% No debemos olvidar que para modificar listas, se necesita el asterisco siempre
+% En caso de romanos y alfabeticos, si quiero que sean mayusculas, utilizo Roman* o Alph*
+
+% Manipular los items en itemización
+Lista con manipulación de señalamiento
+\begin{itemize}
+\item[1A)] Respuesta correcta es A
+\item[1F)] Respuesta correcta es C
+\end{itemize}
+
+% También, para no tener que editar, puede predefinir el operador que itemiza
+\begin{itemize}
+\renewcommand\labelitemi{-} (% puedo usar lo que yo quiera como listador, punto, guión u otros que tienen otros comandos para invocar, consultar lista de símbolos)
+    \item Respuesta Correcta
+    \item Respuesta incorrecta
+\end{itemize}
+
+% Continuando una lista numérica anterior
+\begin{enumerate}[label=\textbf{(E.\arabic*)}, resume]
+\item Prueba matemática por reducción al absurdo
+\end{enumerate}
+
+
+\end{document} % Finalizar texto principal
+
+
+
+

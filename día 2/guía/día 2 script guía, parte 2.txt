@@ -1,0 +1,136 @@
+
+% Creando macros para escribir econometría rápido, pero sirve para cualquier cosa
+\newcommand{\bhat}[1]{\hat{\beta}_#1}% primero me pide el nombre del nuevo comando, número de argumentos, y lo que quiero que haga la función
+% para llamar al número de argumento, uso el operador de numeral y el número de comando. En este caso hay solo uno
+% para escribir un numeral en el texto, debo usar \#
+\newcommand{\sumn}{\sum_{i=1}^n} 
+\newcommand{\varu}{\hat{\sigma}^2}
+\newcommand{\expect}[1]{\text{E}\left[#1\right]}
+\newcommand{\uhat}{\hat{u}_i}
+\newcommand{\btild}[1]{\Tilde{\beta}_#1}
+
+\title{Curso \LaTeX: Manejo de Matemáticas}
+\author{ECEL Research Group}
+\date{Abril 2021}
+
+\begin{document}
+\maketitle
+\section{Math Mode Básico}
+% Superíndices (potencias)
+Considera la ecuación $4x^2+x+6=0$
+% In line math mode: en la misma linea de mi texto se hace la matemática
+% Puede no salir tan grande y verse algo feo
+
+% Arreglo esto con el display math mode
+% Se centra el texto´, y pone a la matemática en su propio lugar
+Considera la ecuación  $$16x^2+6x+61=0$$
+
+% El operador de potencia solo entiende como argumento inmediato al primer signo después del carat
+% no se va a poner el resto en el exponente
+ $$ x^1/4$$ 
+ $$ x^{1/4}$$
+\
+% Potencias elevadas a otra potencia tambiémn
+$$x^6+y^{2x^2+6315}$$
+
+% Subindices
+Considera la curva de demanda $Q_d(p)=5-2p$
+
+% De igual forma se necesita que tenga llaves
+La variable $x_1i$ vs. La variable $x_{1i}$
+
+% Todos los símbolos matemáticos tienen un comando que imprime ese valor en el PDF
+$$\beta_j$$
+% Mayúscula vs minúscula
+$$\pi$$
+$$\Pi + 5$$
+
+% Funciones; tienen sus comandos, no deberían escribirse así nomas
+$$\sin (\theta)$$ 
+$$sin (\theta) $$
+$$\ln x \ vs. ln x$$ % se ignoran los espacios
+$$\log_2 (x)$$
+$$\sqrt{x}$$ 
+$$\sqrt[45]{x}$$
+
+% Fracciones
+$$\frac{x}{y}$$
+$$\dfrac{x}{y}$$ % display style, se necesita un paquete (amsmath). Es redundante en esta situación
+
+Asume que $\frac{\partial y}{ \partial x}=0$ para este ejercicio
+\\ \\ 
+Asume que $\dfrac{\partial y}{ \partial x}=0$ para este ejercicio 
+
+Asume que $\frac{\partial y}{ \partial x}=0$ para este ejercicio  % partial es signo de derivada parcial
+
+% Separadores y otros símbolos
+$$ [1+(x^2+\frac{5}{6x})]^5$$
+ $$\left[1+(x^2+\frac{5}{6x}) \right]^5 $$ % para elementos largos, se necesita \left y \right para adecuar el tamaño de los separadores como paréntesis
+$$ x \in \mathbb{R}$$ % utilizo esto para escribir elementos como los reales, u otros similares
+$i=\{1,2,3,..., 5\}$ % para las llaves, como siempre debo usar el backslash
+El PIB per cápita del Ecuador en 2019 es de alrededor $ \$ 6 \text{K} $ (nominales)
+
+% Inecuaciones: 
+
+Encuentra el valor de $x$, para toda $y \geq 0$ y $z \leq 0$ % para menor y mayor, se usa > < desde el teclado. menor o igual, es \leq (lesser or equal) y mayor o igual es \geq (greater or equal)
+
+% Temas más avanzados: Alineación, ambientes, etc.
+% Un ambiente matemático, para ahorrarnos los símbolos de dólar es equation
+\section{Matemáticas Avanzadas}
+\begin{equation}
+y= \beta_0 +\beta_1 x_1+\beta_2 x_2 + \ldots +\beta_k x_k+u % puedo poner un asterisco para no numerar
+\label{eq:1}
+\end{equation}
+Se estimó el modelo \ref{eq:1} mediante MCO, y los resultados son los siguientes % con hyperref sirve, se puede referenciar mucho después en el documento. 
+
+% Lo más necesario suele ser lograr alinear dos o más expresiones, para demostrar justamente que estamos haciendo
+$$ x^5 +y^6 +z^6= \Lambda $$
+$$32x^5 +y^2 +51z^6= \Theta$$
+
+\begin{align*} % con asterisco para que no enumere
+x^5 +y^6 +z^6&= \Lambda \\  % necesita acabar la fila con el espaciador \\
+32x^5 +y^2 +51z^6&= \Theta % el & (ampersand) es el operador de alineación. Las ecuaciones se alinean en la posición donde este eso
+\end{align*}
+
+% Se puede tener dos bloques
+
+\begin{align*} % con asterisco para que enumere
+x^5 +y^6 +z^6&= \Lambda && x^5+y^{5x}+z^5=9\\ 
+32x^5 +y^2 +51z^6&= \Theta && x^5 +y+0=9\\ 
+\end{align*}
+
+% Notación de cálculo diferencial
+
+% Integrales
+	$$\int x^5 dx$$
+	$$ \int_{0}^5 x^5 dx$$ % el 
+% Evaluado en
+$$\dfrac{x^6}{6} \Bigg |_0^5 $$ % el bigg dice que imprima una línea (|, un valor absoluto, es Alt+124)
+% de ahí, uso la notación tipica de sub y super índice para señalar los límites de evaluación
+$$\left[\dfrac{x^6}{6} \right]_0^5 $$
+
+% Notación sigma 
+$$\sum_{i=1}^n (x^2 +x+10)$$ % misma idea que una integral
+
+
+% Fracciones diagonales
+\nicefrac{5}{3} % se ven mejor en el modo inline o como potencias en comparación a usar solo el slash (5/3) o el \frac{5}{3}
+% Matrices
+$$\begin{bmatrix} % se maneja como una tabla. bmatrix tiene corchetes, hay otras formas
+3 & 2 & x \\
+9 & x & y \\ 
+\end{bmatrix} $$
+
+% Macros
+$$\bhat{1}$$ % lo invoco, pero primero debía haber declarado la nueva función en el préambulo del documento
+
+% Para utilizar llaves (variables dummy)
+    \begin{equation*}
+x
+    \begin{cases} % un tipo de ambiente especial
+      1,& \text{si el encuestado vive en Quito} \\
+      0, & \text{de otra forma}
+    \end{cases}
+  \end{equation*}
+
+ \end{document}

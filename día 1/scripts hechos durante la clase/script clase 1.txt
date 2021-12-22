@@ -1,0 +1,39 @@
+\documentclass[12pt,a4paper]{article} % El primer comando de todo script de latex
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-lcroman,es-nosectiondot]{babel}
+\usepackage{lipsum}
+\usepackage[margin=1in]{geometry}
+\begin{document}
+\tableofcontents
+\clearpage
+
+Hola
+\\ \\ \\ \\ \\
+Este es el primer documento \LaTeX\ de la clase. \TeX \ es el motor de \LaTeX.``Hola''
+\\
+\textbf{Este es un texto en negrillas}
+\textit{Este es un texto en cursivas}
+\underline{Este es texto subrayado} 
+\lipsum
+
+\begin{enumerate}
+\item Hola
+\item Como
+\end{enumerate}
+\begin{itemize}
+    \item Hola
+    \item Como
+\end{itemize}
+\section{Introducción}
+\lipsum
+\section{Desarrollo}
+\lipsum
+\subsection{Tema A}
+\lipsum
+\subsubsection{Subsección}
+\section*{Conclusión}
+\lipsum
+
+El PIB del Ecuador cayó en un 7\% en la pandemia
+\{ \} \textbackslash
+\end{document}
