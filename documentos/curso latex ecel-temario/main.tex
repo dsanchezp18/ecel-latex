@@ -1,0 +1,110 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage[style=authoryear,backend=biber,citestyle=apa,maxnames=2]{biblatex}
+\addbibresource{bib1.bib}
+\nocite{*}
+
+
+\title{Curso Introductorio a \LaTeX}
+\author{ECEL Research Group}
+\date{Abril 2021}
+
+\begin{document}
+\maketitle
+\section*{Outline}
+\textbf{Día 1}: Manejo de texto y formateo de un documento
+\begin{enumerate}
+    \item Introducción: 
+    \begin{itemize}
+       \item ¿Qué es \LaTeX? ¿Para qué sirve? ¿Que veremos en este curso?
+    \item Breve historia
+     \item Teclas de importancia
+     \item Descarga de la distribución, IDEs\footnote{Se describirá como descargar una distribución de \TeX, tipos de builder, pero para todo el curso utilizaremos Overleaf para la facilidad del usuario.}
+    \end{itemize}
+    \item Empezando un documento
+    \begin{itemize}
+            \item El préambulo: clases de documentos, tamaño de letra predeterminado, paquetes \texttt{inputenc}, \texttt{babel}, etc. 
+        \item Formatear el documento: márgenes, orientación, interlineado, etc.
+        
+            \end{itemize}
+    \item Manejando texto
+    \begin{itemize}
+        \item Alineación del texto,  tamaño del texto, tipos de texto
+        \item Listas numeradas y no numeradas, secciones y subsecciones. 
+        \item Construyendo un título, carátulas
+        \item  Encabezados, pies de página, índices, notas al pie
+        \item Manipulando listas y numeración de índices
+        \item Utilizando comillas y blockquotes, mas uso de paquetes. 
+        \end{itemize}
+ \item Miscelaneos 
+ \begin{itemize}
+              \item Tablas, Labels
+              \item Integración con Microsoft Excel: rápidamente hacer tablas complicadas
+                \item Cross-Referencing
+                \item Hipervínculos
+ \end{itemize}
+
+\end{enumerate}
+\textbf{Día 2}: Manejo de Notación Matemática
+\begin{enumerate}
+    \item Math mode
+    \begin{itemize}
+        \item Símbolos más básicos para el álgebra
+        \item Subíndices y superíndices
+        \item Letras griegas y funciones trigonométricas, uso de paquetes para algunos símbolos especiales (porcentajes)
+        \item Paréntesis, corchetes, llaves, etc. 
+         \end{itemize}
+            \item Manejo de matemáticas avanzado
+         \begin{itemize}
+               \item Modos diferentes: alineación, numeración de ecuaciones, inclusión en tablas de contenidos
+        \item Avanzados: integrales, diferenciales, matrices, sigma, econometría, \textit{display style}, etc.
+        \item Programación de macros simples 
+     \end{itemize}
+\end{enumerate}
+\textbf{Día 3:} Imágenes y Elaboración de Gráficos
+\begin{enumerate}
+    \item Imágenes
+    \begin{itemize}
+        \item Como poner una imagen, darle título, moverla, etc. 
+        \item Float, formato tipo APA, etc. 
+        \item Manejo de captions, labels
+        \end{itemize}
+ \item Elaborando gráficos con \textsf{tikz}/ \textsf{pgplots}
+\begin{itemize}
+     \item Introducción a los paquetes
+ \item Realización de gráficos de dispersión con datos en archivos text (con \textsf{pgfplots}
+ \item Dibujar funciones
+ \item Otros gráficos
+ 
+\end{itemize}
+\item Una breve introducción a presentaciones con \LaTeX: Beamer
+\end{enumerate}
+\textbf{Día 4}: Manejando \LaTeX \ para un proyecto final o trabajo de titulación
+\begin{enumerate}
+    \item Utilizando Overleaf
+\begin{itemize} 
+    \item Como descargar proyectos, compilarlos sin internet
+    \item Subir proyectos del computador al Overleaf
+    \item Proyectos \textit{multi-file}
+    \item Documentos colaborativos
+\end{itemize}
+\item Realizando bibliografías con el paquete \textsf{biblatex}
+\begin{itemize}
+    \item Código necesario en el preámbulo para \textsf{biblatex}
+    \item Integración con Citavi para escribir los códigos de bibliografía
+    \item Formateo de citas y bibliografía
+    \end{itemize}
+    \item Integración con otros programas
+\begin{itemize}
+    \item Integración con Rstudio: el paquete \texttt{stargazer} para exportación de tablas y estadísticas
+    \item Integración con Stata: exportando output en formato \LaTeX
+    \item Integración con Microsoft Word: escribiendo código \LaTeX \ en Word para matemáticas
+    \item Mathpix
+\end{itemize}
+\item Consejos varios para \textit{debugging} del código y conclusión
+\end{enumerate}
+\printbibliography[title=Material de Referencia]
+\end{document}

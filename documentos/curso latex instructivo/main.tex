@@ -1,0 +1,102 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}[margin=1in]
+\usepackage[spanish]{babel}
+\usepackage{setspace}
+\onehalfspacing
+\usepackage{csquotes}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+
+\title{Instructivo del Curso Introductorio a \LaTeX}
+\author{ECEL Research Group}
+\date{Abril 2021}
+
+\begin{document}
+\maketitle
+Bienvenidos al curso introductorio de \LaTeX \ de ECEL Research Group. En este curso veremos lo fundamental para empezar a utilizar el sistema de tipografía \LaTeX,\ uno de los software dominantes en la preparación de libros y documentos de investigación. Sus ventajas principales son, entre otras, las amplias posibilidades que tiene y el poder que le da al autor para poder crear documentos de muy alto nivel. 
+
+Una desventaja comúnmente citada de  \LaTeX \ es que tiene una empinada curva de aprendizaje. Sin duda, es mucho menos simple que escribir documentos en Microsoft Word. Sin embargo, tiene ciertas facilidades que no nos brinda Word. Manejar tablas complicadas, posicionamiento de imágenes y fórmulas matemáticas, puede ser muy frustrante en Word. Para poder evitar eso, se puede aprender \LaTeX. 
+
+
+Este documento contiene todos los recursos que requeriremos para nuestro curso. Recuerda que puedes hacer preguntas durante la clase en cualquier momento, por correo electrónico: dsanchezp@estud.usfq.edu.ec, o por Whatsapp y llamadas al 0985618536. 
+
+\section{Preliminares}
+El curso lo llevaremos principalmente en Overleaf, una herramienta en línea para crear documentos \LaTeX. No requiere ninguna preinstalación, solamente la creación de una cuenta gratuita, que la pueden hacer seleccionando 'Register' \href{https://www.overleaf.com/}{aquí}.
+
+Es opcional descargar una distribución de \LaTeX \ en su computador y un editor. Se debe primero instalar una distribución \TeX \ y un editor de \LaTeX. Recomiendo que esto sí se haga con tiempo antes de las clases porque suele demorarse en instalar.
+\begin{itemize}
+    \item Para Windows, recomiendo Mik\TeX. Se puede descargar \href{https://miktex.org/download}{aquí}.
+    \item Para Mac, Mac\TeX, que se puede descargar \href{https://tug.org/mactex/mactex-download.html}{aquí}
+\end{itemize}
+Hay varios editores de \LaTeX, pero el mejor para empezar puede ser \TeX maker, que se puede descargar \href{https://www.xm1math.net/texmaker/index.html}{aquí}.
+Adicionalmente, para los más entendidos y amantes del \textit{dark mode}, puede ser útil manejar \LaTeX \ en Sublime Text 3. El \textit{setup} es un poco más complejo y no lo cubriremos en el curso, pero se pueden seguir estas excelentes instrucciones \href{https://jdhao.github.io/2018/03/10/sublime-text-latextools-setup/}{aquí}.
+
+El curso se basa en conocimiento personal así como en material externo. Un excelente recurso para complementar el curso es el texto \textit{Applied \LaTeX\ for Economists, Social Scientists and Others} de John C. Frain. El texto lo pueden encontrar \href{https://ideas.repec.org/p/tcd/tcduee/tep0214.html}{aquí}. Es importante que se lo descarguen, pues hay algunas tablas a las que haré referencias que se encuentran en este libro. 
+
+
+\section{Día 1: \LaTeX\  Elemental}
+Para el documento de donde iremos sacando texto, click \href{https://tinyurl.com/textodia1}{aquí}.
+\subsection{Símbolos especiales}
+Tabla 4.1 de nuestro texto, página 49. 
+\subsection{El paquete \textsf{inputenc}}
+Para más información sobre UTF8, ASCII, click
+\href{https://tinyurl.com/inputenc}{aquí}.
+\subsection{Tamaños de letra, codificación de \LaTeX}
+Tabla 4.3 del texto del curso; página 58.
+\subsection{Generador de tablas}
+Hay varias opciones, una de ellas pueden verla \href{https://www.tablesgenerator.com/}{aquí}.
+\subsection{Más sobre tablas}
+Para información sobre tablas, click \href{https://www.overleaf.com/learn/latex/tables}{aquí}.
+\section{Día 2: Manejando Matemáticas}
+\subsection{Símbolos}
+Para un catálogo de símbolos en \LaTeX, click \href{http://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf}{aquí}.
+\subsection{Estilo de escritura en matemáticas}
+Para un artículo sobre las convenciones de escritura, leer \href{http://www.tug.org/TUGboat/Articles/tb18-1/tb54becc.pdf}{este artículo}. 
+\subsection{Software adicional}
+Para Mathpix Snip, descargar el programa \href{https://mathpix.com/}{aquí}. Después de inicializar el programa, se utiliza con el shorcut Ctrl+Alt+M.
+
+Codecogs se puede utilizar \href{https://latex.codecogs.com/eqneditor/editor.php}{aquí}.
+\section{Día 3: Imágenes y Gráficos}
+\subsection{Unidades \LaTeX\ y posicionamiento}
+Para una lista de las unidades dentro de \LaTeX, así como los comandos que sirven para definir tamaños de imágenes, ver la tabla titulada \textit{Reference Guide} de \href{https://www.overleaf.com/learn/latex/Inserting_Images#Reference_guide}{este tutorial de Overleaf}. 
+Dentro de ese mismo tutorial, se puede encontrar una tabla en la sección \textit{Positioning} donde se especifican todos los posibles parámetros de posicionamiento dentro del ambiente \texttt{figure}.
+\subsection{El paquete \textsf{tikz}}
+Para un tutorial simplificado del paquete \textsf{tikz}, además de buscar la documentación en CTAN, se puede observar \href{https://www.overleaf.com/learn/latex/TikZ_package}{este otro tutorial de Overleaf}.
+
+Para un uso de \textsf{tikz} aplicado, se puede ver \href{https://play.google.com/books/reader?id=t3ZZDwAAQBAJ&hl=en_GB&pg=GBS.PP1}{este libro gratuito}, y también \href{http://static.latexstudio.net/wp-content/uploads/2016/06/tikzforeconomists-110619150244-phpapp01.pdf}{este paper}. 
+
+Hay muchos ejemplos que, con un mínimo entendimiento de lo que se está haciendo, se puede utilizar el código que otros usuarios han dado. Esto se puede encontrar en este \href{https://texample.net/tikz/examples/area/economics}{sitio web}.
+\subsection{El paquete \textsf{pgfplots}}
+Para un tutorial simple de las posibilidades de \textsf{pgfplots}, ver \href{https://www.overleaf.com/learn/latex/Pgfplots_package}{este tutorial de Overleaf}.
+\subsection{Beamer}
+\href{https://deic-web.uab.cat/~iblanes/beamer_gallery/index.html}{Aquí} se pueden observar todos los temas de Beamer, para darle diferentes estilos a nuestras presentaciones. 
+
+El capítulo 14 del libro del curso trata todo lo relativo a Beamer. Contiene ``recetas'' para presentaciones. 
+\section{Día 4: Construyendo trabajos finales o de titulación}
+\subsection{Overleaf}
+La documentación entera del software está \href{https://www.overleaf.com/learn}{aquí}. 
+Necesitarás descargar WinRar si no lo tienes ya, \href{https://www.win-rar.com/start.html?&L=0}{aquí} lo puedes encontrar.
+
+Se necesita un convertidor para subir archivos \texttt{.zip} a Overleaf. Se encuentra \href{https://cloudconvert.com/rar-to-zip}{aquí}. 
+Puedes averiguar más sobre Xe\LaTeX \href{https://www.overleaf.com/learn/latex/XeLaTeX}{aquí}.
+\subsection{Proyectos Multi-archivo}
+Para una explicación profunda de las dos maneras de crear proyectos grandes, leer \href{https://www.overleaf.com/learn/latex/Multi-file_LaTeX_projects}{este tutorial}.
+\subsection{Bibliografías}
+Para más información sobre el paquete \textsf{biblatex}, click en este \href{https://www.overleaf.com/learn/latex/bibliography_management_with_biblatex}{tutorial de Overleaf}. Es importante que, para buscar los diferentes \textit{citestyles} y \textit{bibliography styles} se busque los mismos \textbf{solamente para el paquete \textsf{biblatex}}, porque son diferentes para los paquetes \textsf{bibtex} y \textsf{natbib}. Sería útil partir desde el tutorial a las otras páginas de tutoriales de Overleaf, cuyos hipervínculos se encuentran al final del link que se mencionó anteriormente. 
+
+A veces, cuando trabajamos offline con editores como \TeX studio, o \TeX maker, \LaTeX\ suele estar configurado de una forma en la que no hace el proceso de compilación considerando las bibliografías. Para resolver ese problema, click \href{https://tex.stackexchange.com/questions/135102/biblatex-doesnt-show-bibliography-when-compiling}{aquí}, o configurar a Sublime Text 3 que parece no tener problemas de este tipo. 
+\subsection{Integración con otros programas}
+El capítulo 9 de nuestro texto contiene mucha información para la integración de \LaTeX \ con otro software, entre ellos, Microsoft Word, R, Stata, Eviews, Matlab, etc. 
+\subsubsection{Integración con Rstudio}
+Para una muy rápida introducción a R, incluyendo instrucciones para descargar el programa, click \href{https://www.computerworld.com/article/2497143/business-intelligence-beginner-s-guide-to-r-introduction.html}{aquí}. El capítulo 9 de nuestro libro de texto contiene varios paquetes e instrucciones sobre algunos paquetes de R, incluido el \textsf{knitr}. Sin embargo, para este curso, solo cubrimos el paquete de R \texttt{stargazer}, que produce tablas de resultados del análisis estadístico en Rstudio. Se puede acceder a la información de documentación de \texttt{stargazer} simplemente escribiendo \texttt{?stargazer} en la consola o script de Rstudio. Para información posterior para usuarios más avanzados de R, click \href{http://www.urfie.net/read/index.html}{aquí} para un libro de Econometría con Rstudio. El capítulo 19 incluye información de \textsf{knitr} y \textsf{sweave}. 
+\subsubsection{Integración con Stata}
+El capítulo 9 de nuestro libro contiene información de como exportar a \LaTeX\ el output de Stata, para un usuario con más experiencia en Stata. Una versión portable de Stata se puede encontrar en el OneDrive del curso. 
+
+\end{document}
